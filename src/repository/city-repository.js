@@ -2,7 +2,9 @@ const { City } = require('../models/index')
 
 class CityRepository{
     async createCity({ name }){
+        console.log("Inside cityrepo ->", {name});
         try {
+            console.log(name);
             const city = await City.create({ name })
             return city;
         } catch (error) {
