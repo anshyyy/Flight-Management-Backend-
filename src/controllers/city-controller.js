@@ -3,7 +3,7 @@ const { CityService } = require('../services/index');
 const cityService = new CityService();
 
 const create = async (req, res) => {
-    console.log("inside city-controller->",req.body);
+    // console.log("inside city-controller->",req.body.title);
     try {
         const city = await cityService.createCity(req.body);
         return res.status(201).json({
