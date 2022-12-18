@@ -4,10 +4,19 @@ class CityService {
     constructor(){
         this.cityRepository = new CityRepository();
     }
-
+    
+    async getAllCities(){
+        try {
+            const cities = await this.cityRepository.getAllCities();
+            return cities;
+        } catch (error) {
+            console.log("Something went wrong inside the serice layer");
+            throw(error);
+        }
+    }
 
     async createCity(data) {
-        console.log("Inside the cityService->", data);
+        // console.log("Inside the cityService->", data);
         try {
             const city = await this.cityRepository.createCity(data);
             return city;  
