@@ -1,9 +1,11 @@
 const express = require('express');
 const CityController = require('../../controllers/city-controller');
+const AirportController = require('../../controllers/airPort-controller');
 
 const router = express.Router();
 
 router.post('/city', CityController.create);
+router.post('/airport',AirportController.create);
 router.post('/cityMultiple',
     CityController.createMultiple);
 router.delete('/city/:id', CityController.destroy);
