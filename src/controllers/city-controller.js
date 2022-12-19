@@ -22,6 +22,30 @@ const create = async (req, res) => {
         });
     }
 }
+
+const createMultiple = async(req,res) => {
+    try {
+
+        // console.log("Controller",req.body);
+        const response = await cityService.createMultiple(req.body);
+        return res.status(201).json({
+            data : response,
+            success: true,
+            message: "Successfully created multiple cities",
+            err : {}
+         });
+        
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            data: {},
+            success: false,
+            message: 'Not able to create multiple city',
+            err: error
+        });
+    }
+}
+
 // DELETE. -> /city/:id
 const destroy = async (req, res) => {
     try {
@@ -85,6 +109,7 @@ const update = async (req, res) => {
     }
 }
 
+
 const getAll = async(req,res) => {
     try {
 
@@ -113,5 +138,6 @@ module.exports = {
     destroy,
     get,
     update,
-    getAll
+    getAll,
+    createMultiple
 }

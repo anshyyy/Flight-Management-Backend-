@@ -15,6 +15,16 @@ class CityService {
         }
     }
 
+    async createMultiple(cityList){
+        // console.log("service",cityList);
+        try {
+            const response = await this.cityRepository.createMultiple(cityList);
+            return response;
+        } catch (error) {
+            console.log("Something went wrong inside the serice layer");
+            throw(error);
+        }
+    }
     async createCity(data) {
         // console.log("Inside the cityService->", data);
         try {

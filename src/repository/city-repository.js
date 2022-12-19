@@ -5,9 +5,25 @@ class CityRepository{
     async createCity({ name }){
         // console.log("Inside cityrepo ->", {name});
         try {
-            // console.log(name);
+            //  console.log(name);
+            //  console.log({name});
             const city = await City.create({ name })
             return city;
+        } catch (error) {
+            console.log("Something went wrong in the repository layer!");
+            throw (error);
+        }
+    }
+    async createMultiple(cityList){
+       
+        try {
+            // console.log("repo",cityList);
+            for(var i=0;i<cityList.length;i++){
+                const c = cityList[i];
+                console.log(c)
+               await City.create(c);
+            }
+            return "Done";
         } catch (error) {
             console.log("Something went wrong in the repository layer!");
             throw (error);
