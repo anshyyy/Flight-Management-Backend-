@@ -18,7 +18,8 @@ class CityRepository{
                                 // else cities like fliter!
         try {
             if(filter.name){
-                const cities = await City.find({
+                console.log(filter.name);
+                const cities = await City.findAll({
                     where : {
                         name : {
                             [Op.startsWith] : filter.name
