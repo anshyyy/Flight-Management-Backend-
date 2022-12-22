@@ -10,6 +10,8 @@ router.post('/flights',FlightController.create);
 router.post('/cityMultiple',CityController.createMultiple);
 router.delete('/city/:id', CityController.destroy);
 router.delete('/airport/:id', AirportController.deleteAirport);
+
+router.get('/flights',FlightController.getAllFlight);
 router.get('/city/:id', CityController.get);
 router.get('/city',CityController.getAll);
 router.get('/airport/:id', AirportController.getAirport);
