@@ -22,6 +22,9 @@ class FlightRepository {
         }
         if (filter.minPrice && !filter.maxPrice) {
             Object.assign(filterObject, { price: { [Op.gte]: filter.minPrice } });
+
+
+            
         }
         if (filter.maxPrice && !filter.minPrice) {
             Object.assign(filterObject, { price: { [Op.lte]: filter.maxPrice } });
@@ -62,7 +65,19 @@ class FlightRepository {
         }
     }
 
-    async deleteFlight() { }
+    async deleteFlight(flightId) {
+        try {
+            await this.Flights.destroy({
+                where : {
+                    id : flightId
+                }
+            });
+            return true;
+        } catch (error) {
+            console.log("Something went wrong in the Repository layer");
+            throw (error);
+        }
+     }
 
     async updateFlight() { }
 
