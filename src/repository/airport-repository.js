@@ -74,5 +74,19 @@ class AirportRepository extends CrudRepository {
             throw (error);
         }
     }
+    async getAirportName(id) {
+        try {
+            const airport = await Airport.findAll({
+                where: {
+                    id: id
+                }
+            });
+            return airport;
+        } catch (error) {
+            console.log("Something went wrong in the repository layer!");
+            throw (error);
+        }
+    }
+
 }
 module.exports = AirportRepository;

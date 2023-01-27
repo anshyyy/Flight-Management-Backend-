@@ -41,6 +41,26 @@ const getAirport = async(req,res) => {
     });
    }
 }
+
+const getAirportName = async(req,res) => {
+    try {
+         const airPort = await airportService.getAirportName(req.params.id);
+         return res.status(201).json({
+             data:airPort,
+             success:true,
+             message:"Successfully fetched a airport!",
+             err : {}
+         });
+    } catch (error) {
+     console.log(error);
+     return res.status(500).json({
+         data: {},
+         success: false,
+         message: 'Not able to fetch a airport',
+         err: error
+     });
+    }
+ }
 const deleteAirport = async(req,res)=> {
     try {
          const airport = await airportService.deleteAirport(req.params.id);
@@ -84,5 +104,6 @@ module.exports = {
     create,
     deleteAirport,
     getAirport,
-    updateAirport
+    updateAirport,
+    getAirportName
 }

@@ -17,8 +17,9 @@ router.get('/flights', FlightController.getAllFlight);
 router.get('/city/:id', CityController.get);
 router.get('/city', CityController.getAll);
 router.get('/flight/:id',FlightController.getFlight);
-
 router.get('/airport/:id', AirportController.getAirport);
+router.get('/airportName/:id', AirportController.getAirport);
+
 router.patch('/city/:id', CityController.update);
 router.patch('/airport/:id', AirportController.updateAirport);
 router.patch('/update-flight/:id',FlightController.updateFlight);
