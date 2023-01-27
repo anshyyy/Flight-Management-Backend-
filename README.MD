@@ -50,4 +50,4 @@
    - [API Gateway](https://github.com/anshyyy/API-Gateway)
 
   
-![plot](./src/utils/chart.png)
+![chart](./src/utils/chart.png)
