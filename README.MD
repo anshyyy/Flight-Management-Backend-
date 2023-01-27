@@ -31,7 +31,7 @@
   - A city has many airports but one airport belongs to a city.
   - One airport can have many flights, but a flight belongs to one airport.
 
-  ##Tables
+  ## Tables
 
   ### City -> id,name, created_at, updated_at
   ### Airport -> id,name,address,city_id,created_at,updated_at
@@ -41,3 +41,13 @@
   npx sequelize model:generate --name Airport --attributes name:String,address:String,cityId:integer
   ```
    
+
+   ## There are basically 4 services :
+   - [Auth Service](https://github.com/anshyyy/Auth_Service) 
+   - [Flight and search Service](https://github.com/anshyyy/Flight-Management-Backend-)
+   - [Email and ticket Reminder Service](https://github.com/anshyyy/Email-Remainder-Service)
+   - [Booking Service](https://github.com/anshyyy/Booking-service)
+   - [API Gateway](https://github.com/anshyyy/API-Gateway)
+
+  
+![plot](./src/utils/chart.png)
